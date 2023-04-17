@@ -1,0 +1,28 @@
+<div class="row" *ngIf="users$ | async as users" >
+  <div class="col_sm-6 col-md-4 col-lg-4">
+    <div class="list-group mb-2">
+    </div>
+    <div class="list-group" >
+      <div style="background: #ECECEC;padding:30px;">
+        <div nz-row [nzGutter]="8">
+          <div nz-col [nzSpan]="8"  *ngFor="let u of users" class="mb-3">
+            <nz-card [nzTitle]="u.name">
+              <p >{{u.email}}</p>
+              <p>CreatedAt : {{u.createdAt | date:'dd.MM.yyyy HH:mm'}}</p>
+              <p>UpdatedAt : {{u.updatedAt | date:'dd.MM.yyyy HH:mm'}}</p>
+              <button nz-button nzType="primary"  nzShape="circle"  (click)="delete(u.id)">
+                <span nz-icon nzType="delete" nzTheme="outline"></span>
+              </button>
+            </nz-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-container>
+    <div class="list-group mb-2" *ngIf="users.length===0">
+      <div class="alert alert-danger text-center">Users doesnt exist!</div>
+    </div>
+  </ng-container>
+  <router-outlet></router-outlet>
+</div>

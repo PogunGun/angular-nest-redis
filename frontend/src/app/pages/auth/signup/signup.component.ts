@@ -44,7 +44,7 @@ export class SignupComponent {
     this.authService.signup(user).subscribe( (res:Response) => {
         console.log(res);
         this.form.reset;
-        this.router.navigate( ['dashboard']);
+        this.router.navigate( ['users']);
         this.submitted = false;
 
       }, () => {

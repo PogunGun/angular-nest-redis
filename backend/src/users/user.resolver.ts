@@ -12,12 +12,6 @@ export class UserResolver {
         private readonly userService: UserService,
     ) {
     }
-
-    @Mutation(() => UserEntity)
-    async createUser(@Args('createUser') createUserInput: CreateUserInput): Promise<UserEntity> {
-        return await this.userService.createUser(createUserInput)
-    }
-
     @Mutation(() => UserEntity)
     async updateUser(@Args('updateUser') updateUserInput: UpdateUserInput): Promise<UserEntity> {
         return await this.userService.updateUser(updateUserInput)

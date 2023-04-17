@@ -14,7 +14,7 @@ export class NavComponent {
     this.menu=[
       {id:1, title:"Main",href:"/main"},
       {id:3, title:"Orders",href:"/orders"},
-      {id:4, title:"Dashboard",href:"/dashboard"},
+      {id:4, title:"Users",href:"/users"},
     ]
   }
 }
