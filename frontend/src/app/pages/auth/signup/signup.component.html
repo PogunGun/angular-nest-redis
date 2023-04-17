@@ -1,0 +1,30 @@
+
+<nz-layout style="height: 100vh" >
+  <nz-header>Angular</nz-header>
+  <nz-content class="nz-layout">
+    <div class="login-layout">
+      <form [formGroup]="form" class="login-form">
+        <div class="mb-3">
+          <nz-input-group>
+            <input type="email" id="email" class="input-login" formControlName="email" nz-input placeholder="Enter your email" />
+          </nz-input-group>
+        </div>
+        <div class="mb-3">
+          <nz-input-group>
+            <input type="password"  id="password" class="input-login" formControlName="password" nz-input placeholder="Enter your password" />
+          </nz-input-group>
+        </div>
+        <div class="mb-3">
+          <nz-input-group>
+            <input type="password"  id="name" class="input-login" formControlName="name" nz-input placeholder="Enter your username" />
+          </nz-input-group>
+        </div>
+        <!--  <input type="number" [value]="user?.id" hidden>-->
+        <button nz-button nzType="primary"  (click)="onSubmit()" nzBlock>newSubmit</button>
+      </form>
+      <a class="register" [routerLink]="['/login']">Login now!</a>
+    </div>
+
+  </nz-content>
+  <nz-footer>Footer</nz-footer>
+</nz-layout>
